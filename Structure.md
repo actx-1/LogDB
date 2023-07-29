@@ -42,3 +42,6 @@ CRUD operations (INSERT, SELECT, UPDATE, DELETE) are a good starting point, howe
 
 
 # Examples
+Some examples of real-world use cases where LogDB may find use.
+
+**Incrementing a Counter**
