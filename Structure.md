@@ -45,6 +45,7 @@ CRUD operations (INSERT, SELECT, UPDATE, DELETE) are a good starting point, howe
 Some examples of real-world use cases where LogDB may find use.
 
 **Incrementing a Counter**
+
 There are many cases where you might want to increment some form of counter. Say, if your application records the number of views for each video, or the number of likes or dislikes for a particular post, or maybe the number of downloads for a particular file?
 There are a few ways to do this:
 - SQL. With a relational database, you could either record a table with the counter, and increment or decrement the counter every action, or maybe record a table of “action timeline”, and apply a `COUNT(*)` every time you want to find the state of the counter. Both of these solutions are quick and easy, and work for smaller deployments. However, they are both inefficient (for updating and for counting large numbers of rows).
