@@ -54,10 +54,13 @@ There are a few ways to do this:
 The alternative would be to use in-memory write caching in conjunction with LogDB: the view counter could be incremented in memory, in a variable or dictionary, and each increment could be asynchronously sent to LogDB. LogDB has significantly less to worry about in the way of table bloat for constantly updated or deleted rows, and no index bloat by virtue of not needing indexes. Furthermore, LogDB's goal is to be significantly faster than a full database for this sort of behaviour, along with configurable durability. Therefore, a durable incremental counter write cache is a use case for LogDB.
 
 **Durable Write Caching**
+
 Say if your application periodically receives messages, but it wishes to save them to disk as JSON in batches? Keeping messages in memory for the duration of the flush timer presents the risk of data loss. However, if the messages are logged to LogDB immediately after being received, then they can be retrieved following a crash.
 
 **Game or Application Save Format**
+
 Applications and games may require the capacity to save data frequently. Most games do this by periodically saving data dumps to disk (save files). However, if something wishes to periodically save smaller sets of information as they happen, then LogDB may be a suitable tool.
 
 **Application Journalling**
+
 A persistent journal for the actions that will be taken by an application: for the ability to continue or roll back following a failure.
